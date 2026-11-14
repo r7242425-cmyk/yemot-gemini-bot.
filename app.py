@@ -31,7 +31,7 @@ def ivr_bot():
 
   try:
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-1.5-flash",
         contents=user_text,
     )
     bot_reply = response.text.strip().replace("\n", " ")
@@ -43,4 +43,3 @@ def ivr_bot():
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
   app.run(host="0.0.0.0", port=port)
-      
